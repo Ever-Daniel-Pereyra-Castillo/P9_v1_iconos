@@ -1,43 +1,59 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MisIconosApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MisIconosApp extends StatelessWidget {
+  const MisIconosApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+          appBar: AppBar(
+            title: const Text("Ever Daniel Pereyra Castillo"),
+            titleTextStyle:
+                const TextStyle(color: Color(0xff005e03), fontSize: 20),
+            centerTitle: true,
+            backgroundColor: const Color(0xffbcffbe),
+          ),
+          body: Column(
+            children: <Widget>[
+              const Text(
+                "Ever Daniel Pereyra Castillo Mat: 22308051281282",
+                style: TextStyle(color: Color(0xff005e03), fontSize: 18),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Icon(
+                    Icons.thumb_down_alt_sharp,
+                    color: Colors.pink,
+                    size: 40.0,
+                    semanticLabel: 'Text to announce in accessibility modes',
+                  ),
+                  Icon(
+                    Icons.audiotrack,
+                    color: Color(0xfffdb124),
+                    size: 40.0,
+                  ),
+                  Icon(
+                    Icons.beach_access,
+                    color: Colors.purple,
+                    size: 40.0,
+                  ),
+                  Icon(
+                    Icons.list,
+                    color: Colors.blue,
+                    size: 40,
+                  ),
+                ],
+              ),
+            ],
+          )),
     );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
-    );
-  }
-}
+  } //MisWidggets
+} //clase mis iconos app
